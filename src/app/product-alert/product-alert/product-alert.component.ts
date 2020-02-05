@@ -13,4 +13,8 @@ export class ProductAlertComponent implements OnInit {
   ngOnInit() {
   }
 
+ onNotify() {
+    window.alert('You will be notified locally when the product goes on sale');
+  }
+
 }
