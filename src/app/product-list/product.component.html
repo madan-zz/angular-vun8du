@@ -1,11 +1,16 @@
 <p>Products</p>
 <div *ngFor="let product of products">
 
-  <h3>
+  
       <a [title]="product.name + ' '+ product.description">
       {{ product.name }}
     </a>
-  </h3>
+    <button (click)="share(product.name)">
+    Share
+  </button>
+
+<app-product-alert [product_price]="product.price" (notifier)="onNotify()"></app-product-alert>
+  
 
 </div>
 
