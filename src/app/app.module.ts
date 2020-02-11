@@ -7,9 +7,14 @@ import { HelloComponent } from './hello.component';
 import { TopMenuComponent } from './top_menu/top.menu.component';
 import { ProductComponent } from './product-list/product.component';
 import { ProductAlertComponent } from './product-alert/product-alert/product-alert.component';
+import { ProductDetailsComponent } from './product-details/product-details/product-details.component';
+import { Pro}
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,  RouterModule],
-  declarations: [ AppComponent, HelloComponent, TopMenuComponent, ProductComponent, ProductAlertComponent ],
+  imports:      [ BrowserModule, FormsModule,  RouterModule.forRoot([
+      { path: '', component: ProductComponent },
+      { path: 'products/:productId', component: ProductDetailsComponent },
+    ])],
+  declarations: [ AppComponent, HelloComponent, TopMenuComponent, ProductComponent, ProductAlertComponent, ProductDetailsComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
