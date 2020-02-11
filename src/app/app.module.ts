@@ -7,8 +7,8 @@ import { HelloComponent } from './hello.component';
 import { TopMenuComponent } from './top_menu/top.menu.component';
 import { ProductComponent } from './product-list/product.component';
 import { ProductAlertComponent } from './product-alert/product-alert/product-alert.component';
-import { ProductDetailsComponent } from './product-details/product-details/product-details.component';
-import { Pro}
+import { ProductDetailsComponent } from './product-details/product-details.component';
+
 @NgModule({
   imports:      [ BrowserModule, FormsModule,  RouterModule.forRoot([
       { path: '', component: ProductComponent },
