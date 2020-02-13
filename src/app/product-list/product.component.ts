@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-//import { products } from '../products';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -8,21 +7,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  products
-  constructor(private http: HttpClient) {
+  products 
 
-  }
+  constructor(private route: ActivatedRoute) {}
+  
   ngOnInit() {
-    console.log("on init...");
- this.http.get('http://localhost:8000/products').subscribe((result) => {
-   this.products = result;
-   console.log(this.products);
-    console.log("products...");
- })
-    
+    this.route.data.subscribe((data) => {
+      this.products = data.products;
+    });
   }
-  
-  
+
   share(name) {
     window.alert(name+'The product has been shared!');
   }
